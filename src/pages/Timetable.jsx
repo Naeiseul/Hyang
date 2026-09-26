@@ -220,6 +220,17 @@ export default function Timetable() {
       const hasAssessment = dayEvents.some(ev => ev.type.includes('ASSESSMENT'));
       const hasWork = dayEvents.some(ev => ev.type === 'WORK');
 
+      const textEvents = [];
+      EVENTS.forEach(ev => {
+        if (ev.type === 'WORK' || ev.type.includes('CLASS')) return;
+        if (ev.end) {
+          if (dateStr === ev.date) textEvents.push({ ...ev, title: `Start: ${ev.title}` });
+          else if (dateStr === ev.end) textEvents.push({ ...ev, title: `End: ${ev.title}` });
+        } else {
+          if (dateStr === ev.date) textEvents.push(ev);
+        }
+      });
+
       days.push(
         <div 
           key={d} 
@@ -242,7 +253,7 @@ export default function Timetable() {
           </div>
 
           <div style={{ marginTop: 8, display: 'flex', flexDirection: 'column', gap: 4 }}>
-            {dayEvents.filter(ev => ev.type.includes('ASSESSMENT') || !ev.type.includes('CLASS')).slice(0, 2).map((ev, idx) => (
+            {textEvents.slice(0, 3).map((ev, idx) => (
               <div key={idx} style={{
                 fontSize: 10, padding: '2px 4px', borderRadius: 4,
                 background: 'rgba(255,255,255,0.1)', color: '#ccc',
@@ -251,7 +262,7 @@ export default function Timetable() {
                 {ev.title}
               </div>
             ))}
-            {dayEvents.length > 2 && <div style={{ fontSize: 10, color: '#666' }}>+{dayEvents.length - 2} more...</div>}
+            {textEvents.length > 3 && <div style={{ fontSize: 10, color: '#666' }}>+{textEvents.length - 3} more...</div>}
           </div>
         </div>
       );
