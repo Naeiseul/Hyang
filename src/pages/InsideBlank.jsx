@@ -27,7 +27,6 @@ const CLOUDS = [
   { label: 'Family', bottom: '15%', left: '24%', color: '#fda4af', delay: '-5s' },
   { label: 'Big Girl Corporate Job', bottom: '17%', left: '46%', color: '#c9a86a', delay: '-9s' },
   { label: 'North Korea', bottom: '8%', left: '6%', color: '#93c5fd', delay: '-7s' },
-  { label: 'University Timetable', bottom: '10%', right: '10%', color: '#2D8A4E', delay: '-2s' },
 ];
 
 const CLOUD_BOARDS = {

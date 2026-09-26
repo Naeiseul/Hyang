@@ -129,15 +129,6 @@ export default function Timetable() {
 
   return (
     <div style={{ minHeight: '100vh', fontFamily: FONT, color: TEXT, background: BG, paddingBottom: 60 }}>
-      <div style={{ padding: '16px 24px', borderBottom: GLASS_BORDER, display: 'flex', alignItems: 'center' }}>
-        <button onClick={() => navigate('/dashboard')} style={{
-          background: 'none', border: 'none', color: TEXT, cursor: 'pointer', fontFamily: FONT,
-          fontSize: 14, padding: '8px 16px', borderRadius: 6, background: GLASS
-        }}>
-          &larr; Back to Dashboard
-        </button>
-      </div>
-
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '24px 16px' }}>
         <div style={{ marginBottom: 24, padding: 24, background: GLASS, border: GLASS_BORDER, borderRadius: 12 }}>
           <h2 style={{ fontFamily: SERIF, fontSize: 24, margin: '0 0 16px 0', color: '#fff' }}>Massive Stellies Third Year Module</h2>
