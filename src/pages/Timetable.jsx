@@ -24,11 +24,17 @@ const EVENTS = [
   { date: '2026-11-19', end: '2026-12-05', title: 'SU: Nov A3 Assessment Period', type: 'SU' },
   { date: '2026-12-11', title: 'SU: Second Semester Ends', type: 'SU' },
 
-  // Imagined Test & Exam Dates for UP
+  // UP Practicals & Tests
+  { date: '2026-10-06', title: 'UP: WTW 364 Practical', type: 'UP_ASSESSMENT' },
+  { date: '2026-10-07', title: 'UP: IAS 382 Practical (Excel)', type: 'UP_ASSESSMENT' },
+  { date: '2026-10-08', title: 'UP: WST 321 Practical', type: 'UP_ASSESSMENT' },
+  { date: '2026-10-09', title: 'UP: WST 322 Practical', type: 'UP_ASSESSMENT' },
   { date: '2026-10-12', title: 'UP: WTW 364 Test 2', type: 'UP_ASSESSMENT' },
-  { date: '2026-10-14', title: 'UP: IAS 382 Practical', type: 'UP_ASSESSMENT' },
+  { date: '2026-10-14', title: 'UP: IAS 382 Practical (Excel)', type: 'UP_ASSESSMENT' },
   { date: '2026-10-16', title: 'UP: WST 322 Test 2', type: 'UP_ASSESSMENT' },
   { date: '2026-10-17', title: 'UP: WST 321 Test 2', type: 'UP_ASSESSMENT' },
+  { date: '2026-10-20', title: 'UP: WTW 364 Practical', type: 'UP_ASSESSMENT' },
+  { date: '2026-10-21', title: 'UP: IAS 382 Practical (Excel)', type: 'UP_ASSESSMENT' },
   { date: '2026-11-08', title: 'UP: WTW 364 Exam', type: 'UP_ASSESSMENT' },
   { date: '2026-11-14', title: 'UP: IAS 382 Exam', type: 'UP_ASSESSMENT' },
   { date: '2026-11-19', title: 'UP: WST 322 Exam', type: 'UP_ASSESSMENT' },
