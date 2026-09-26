@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AUTH_KEY, FONT, LS, MONO, TEXT } from '../styles/tokens.js';
 
@@ -27,6 +27,7 @@ const CLOUDS = [
   { label: 'Family', bottom: '15%', left: '24%', color: '#fda4af', delay: '-5s' },
   { label: 'Big Girl Corporate Job', bottom: '17%', left: '46%', color: '#c9a86a', delay: '-9s' },
   { label: 'North Korea', bottom: '8%', left: '6%', color: '#93c5fd', delay: '-7s' },
+  { label: 'University Timetable', bottom: '10%', right: '10%', color: '#2D8A4E', delay: '-2s' },
 ];
 
 const CLOUD_BOARDS = {
@@ -487,7 +488,7 @@ export default function InsideBlank() {
             key={cloud.label}
             type="button"
             className={`vision-cloud${hasBoard ? ' has-board' : ''}`}
-            onClick={() => hasBoard && setOpenCloud(cloud.label)}
+            onClick={() => { if (cloud.label === 'University Timetable') navigate('/timetable'); else if (hasBoard) setOpenCloud(cloud.label); }}
             style={{
               top: cloud.top,
               left: cloud.left,
@@ -522,6 +523,7 @@ export default function InsideBlank() {
     </main>
   );
 }
+
 
 
 
