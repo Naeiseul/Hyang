@@ -35,7 +35,7 @@ export const COLORS = {
 };
 
 export const PASSWORD_HASH =
-  'fd3c4bbace4573d70483819fdcd6da1ab236698c57aef835ae746929f8dbdb41';
+  '01905f992b771af2ae1c0820243fcb094dbd3a42b589c70e6c012c328930d01a';
 
 export async function sha256(text) {
   const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
@@ -66,4 +66,5 @@ export const LS = {
 };
 
 export const AUTH_KEY = 'sovereign-auth';
+
 
