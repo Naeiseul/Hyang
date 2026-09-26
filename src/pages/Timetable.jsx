@@ -63,31 +63,32 @@ for (let d = new Date(startDate); d <= yearEndDate; d.setDate(d.getDate() + 1)) 
   // Weekly classes (only if before classEndDate and not a Sunday)
   if (d <= classEndDate) {
     if (day === 1) { // Monday
-      EVENTS.push({ date: dateStr, title: 'Lecture: WTW 364', type: 'UP_CLASS' });
-      EVENTS.push({ date: dateStr, title: 'Lecture: IAS 382', type: 'UP_CLASS' });
-      EVENTS.push({ date: dateStr, title: 'Lecture: Math Stat 344', type: 'SU_CLASS' });
-      EVENTS.push({ date: dateStr, title: 'Lecture: Actuarial Sci 371', type: 'SU_CLASS' });
+      EVENTS.push({ date: dateStr, time: '08:30-09:20', title: 'Lecture: WTW 364', type: 'UP_CLASS' });
+      EVENTS.push({ date: dateStr, time: '10:00-10:50', title: 'Lecture: Math Stat 344', type: 'SU_CLASS' });
+      EVENTS.push({ date: dateStr, time: '11:30-12:20', title: 'Lecture: IAS 382', type: 'UP_CLASS' });
+      EVENTS.push({ date: dateStr, time: '14:00-14:50', title: 'Lecture: Actuarial Sci 371', type: 'SU_CLASS' });
     }
     if (day === 2) { // Tuesday
-      EVENTS.push({ date: dateStr, title: 'Lecture: WST 321', type: 'UP_CLASS' });
-      EVENTS.push({ date: dateStr, title: 'Lecture: WST 322', type: 'UP_CLASS' });
-      EVENTS.push({ date: dateStr, title: 'Lecture: Math Stat 364', type: 'SU_CLASS' });
-      EVENTS.push({ date: dateStr, title: 'Practical: WTW 364', type: 'UP_CLASS' });
+      EVENTS.push({ date: dateStr, time: '09:30-10:20', title: 'Lecture: WST 321', type: 'UP_CLASS' });
+      EVENTS.push({ date: dateStr, time: '11:00-11:50', title: 'Lecture: Math Stat 364', type: 'SU_CLASS' });
+      EVENTS.push({ date: dateStr, time: '13:30-14:20', title: 'Lecture: WST 322', type: 'UP_CLASS' });
+      EVENTS.push({ date: dateStr, time: '15:30-17:00', title: 'Practical: WTW 364', type: 'UP_CLASS' });
     }
     if (day === 3) { // Wednesday
-      EVENTS.push({ date: dateStr, title: 'Practical: IAS 382 (Excel)', type: 'UP_CLASS' });
-      EVENTS.push({ date: dateStr, title: 'Practical: Math Stat 344', type: 'SU_CLASS' });
-      EVENTS.push({ date: dateStr, title: 'Tutorial: Actuarial Sci 371', type: 'SU_CLASS' });
+      EVENTS.push({ date: dateStr, time: '09:00-12:00', title: 'Practical: Math Stat 344', type: 'SU_CLASS' });
+      EVENTS.push({ date: dateStr, time: '13:30-16:30', title: 'Practical: IAS 382 (Excel)', type: 'UP_CLASS' });
+      EVENTS.push({ date: dateStr, time: '14:00-17:00', title: 'Tutorial: Actuarial Sci 371', type: 'SU_CLASS' });
     }
     if (day === 4) { // Thursday
-      EVENTS.push({ date: dateStr, title: 'Lecture: WTW 364', type: 'UP_CLASS' });
-      EVENTS.push({ date: dateStr, title: 'Practical: WST 321', type: 'UP_CLASS' });
-      EVENTS.push({ date: dateStr, title: 'Practical: Math Stat 364', type: 'SU_CLASS' });
+      EVENTS.push({ date: dateStr, time: '08:30-09:20', title: 'Lecture: WTW 364', type: 'UP_CLASS' });
+      EVENTS.push({ date: dateStr, time: '10:30-13:30', title: 'Practical: WST 321', type: 'UP_CLASS' });
+      EVENTS.push({ date: dateStr, time: '14:00-17:00', title: 'Practical: Math Stat 364', type: 'SU_CLASS' });
     }
     if (day === 5) { // Friday
-      EVENTS.push({ date: dateStr, title: 'Lecture: IAS 382', type: 'UP_CLASS' });
-      EVENTS.push({ date: dateStr, title: 'Lecture: WST 321 & WST 322', type: 'UP_CLASS' });
-      EVENTS.push({ date: dateStr, title: 'Practical: WST 322', type: 'UP_CLASS' });
+      EVENTS.push({ date: dateStr, time: '08:30-09:20', title: 'Lecture: IAS 382', type: 'UP_CLASS' });
+      EVENTS.push({ date: dateStr, time: '09:30-10:20', title: 'Lecture: WST 321', type: 'UP_CLASS' });
+      EVENTS.push({ date: dateStr, time: '10:30-11:20', title: 'Lecture: WST 322', type: 'UP_CLASS' });
+      EVENTS.push({ date: dateStr, time: '13:30-16:30', title: 'Practical: WST 322', type: 'UP_CLASS' });
     }
   }
 
@@ -125,9 +126,10 @@ function DayView({ dateStr, onBack }) {
 
   const renderList = (items, color) => (
     <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-      {items.map((item, i) => (
-        <li key={i} style={{ padding: '12px 16px', background: 'rgba(255,255,255,0.03)', borderLeft: `4px solid ${color}`, marginBottom: 8, borderRadius: '0 8px 8px 0', color: '#eee' }}>
-          {item.title}
+      {[...items].sort((a,b) => (a.time || '').localeCompare(b.time || '')).map((item, i) => (
+        <li key={i} style={{ padding: '12px 16px', background: 'rgba(255,255,255,0.03)', borderLeft: `4px solid ${color}`, marginBottom: 8, borderRadius: '0 8px 8px 0', color: '#eee', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <span>{item.title}</span>
+          {item.time && <span style={{ color: '#aaa', fontSize: 13, fontFamily: 'monospace' }}>{item.time}</span>}
         </li>
       ))}
     </ul>
