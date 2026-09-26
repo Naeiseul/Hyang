@@ -53,20 +53,20 @@ const EVENTS = [
 
 // --- INJECTED MINOR ASSESSMENTS ---
 // UP Minor Assessments
-EVENTS.push({ date: '2026-09-29', time: '18:00-23:59', title: 'IAS 382 Excel Prac Submission', type: 'UP_ASSESSMENT', description: 'Weekly Kaplan-Meier estimator Excel practical.' });
-EVENTS.push({ date: '2026-10-01', time: '08:30-09:20', title: 'WTW 364 Class Test 3', type: 'UP_ASSESSMENT', description: 'In-class test on Ito calculus.' });
-EVENTS.push({ date: '2026-10-05', time: '12:00-12:30', title: 'WST 321 Pop Quiz', type: 'UP_ASSESSMENT', description: 'ClickUP online quiz covering AR(p) models.' });
-EVENTS.push({ date: '2026-10-10', time: '23:59-23:59', title: 'WST 322 R-Script Submission', type: 'UP_ASSESSMENT', description: 'Loss distribution fitting assignment.' });
-EVENTS.push({ date: '2026-10-19', time: '18:00-23:59', title: 'IAS 382 Excel Prac Submission', type: 'UP_ASSESSMENT', description: 'Cox proportional hazards model.' });
-EVENTS.push({ date: '2026-10-22', time: '08:30-09:20', title: 'WTW 364 Class Test 4', type: 'UP_ASSESSMENT', description: 'In-class test on Black-Scholes PDEs.' });
-EVENTS.push({ date: '2026-10-31', time: '23:59-23:59', title: 'WST 321 R-Script Submission', type: 'UP_ASSESSMENT', description: 'Time series forecasting assignment.' });
+EVENTS.push({ date: '2026-09-29', time: '18:00-23:59', title: 'IAS 382 Excel Prac Submission', type: 'UP_ASSESSMENT', description: 'Post-Practical Hand-in: Must upload your completed Excel model for the Kaplan-Meier estimator to ClickUP before midnight.' });
+EVENTS.push({ date: '2026-10-01', time: '08:30-09:20', title: 'WTW 364 Class Test 3', type: 'UP_ASSESSMENT', description: 'In-Person Class Test: Closed book, invigilated test during the lecture slot. Have your student card, pen, and calculator ready. Covers Ito calculus.' });
+EVENTS.push({ date: '2026-10-05', time: '12:00-12:30', title: 'WST 321 Pop Quiz', type: 'UP_ASSESSMENT', description: 'Online Quiz: Strict 30-minute ClickUP online quiz covering AR(p) models. Must be completed before the afternoon session.' });
+EVENTS.push({ date: '2026-10-10', time: '23:59-23:59', title: 'WST 322 R-Script Submission', type: 'UP_ASSESSMENT', description: 'Post-Practical Hand-in: Upload your Loss distribution fitting R-Script and compiled PDF report online before midnight.' });
+EVENTS.push({ date: '2026-10-19', time: '18:00-23:59', title: 'IAS 382 Excel Prac Submission', type: 'UP_ASSESSMENT', description: 'Post-Practical Hand-in: Must upload your completed Cox proportional hazards Excel model to ClickUP.' });
+EVENTS.push({ date: '2026-10-22', time: '08:30-09:20', title: 'WTW 364 Class Test 4', type: 'UP_ASSESSMENT', description: 'In-Person Class Test: Closed book, invigilated test during the lecture slot. Have your student card and pen ready. Covers Black-Scholes PDEs.' });
+EVENTS.push({ date: '2026-10-31', time: '23:59-23:59', title: 'WST 321 R-Script Submission', type: 'UP_ASSESSMENT', description: 'Post-Practical Hand-in: Upload your Time series forecasting R-Script and PDF online.' });
 
 // SU Minor Assessments
-EVENTS.push({ date: '2026-09-28', time: '14:00-15:00', title: 'Actuarial 371 Class Test', type: 'SU_ASSESSMENT', description: 'In-tutorial test on run-off triangles.' });
-EVENTS.push({ date: '2026-10-04', time: '23:59-23:59', title: 'Math Stat 344 Quiz 4', type: 'SU_ASSESSMENT', description: 'SUNLearn quiz on Decision Trees.' });
-EVENTS.push({ date: '2026-10-07', time: '23:59-23:59', title: 'Math Stat 364 Quiz 3', type: 'SU_ASSESSMENT', description: 'SUNLearn theory quiz.' });
-EVENTS.push({ date: '2026-10-14', time: '14:00-15:00', title: 'Actuarial 371 Class Test 2', type: 'SU_ASSESSMENT', description: 'In-tutorial test on derivative pricing.' });
-EVENTS.push({ date: '2026-10-25', time: '23:59-23:59', title: 'Math Stat 344 Quiz 5', type: 'SU_ASSESSMENT', description: 'SUNLearn quiz on Support Vector Machines.' });
+EVENTS.push({ date: '2026-09-28', time: '14:00-15:00', title: 'Actuarial 371 Class Test', type: 'SU_ASSESSMENT', description: 'In-Tutorial Class Test: Must be there in person. First 45 mins of the tutorial is a written test on run-off triangles under exam conditions.' });
+EVENTS.push({ date: '2026-10-04', time: '23:59-23:59', title: 'Math Stat 344 Quiz 4', type: 'SU_ASSESSMENT', description: 'Online Quiz: SUNLearn quiz on Decision Trees. Make sure you have a stable connection before starting.' });
+EVENTS.push({ date: '2026-10-07', time: '23:59-23:59', title: 'Math Stat 364 Quiz 3', type: 'SU_ASSESSMENT', description: 'Online Quiz: Quick SUNLearn theory quiz to test your weekly reading.' });
+EVENTS.push({ date: '2026-10-14', time: '14:00-15:00', title: 'Actuarial 371 Class Test 2', type: 'SU_ASSESSMENT', description: 'In-Tutorial Class Test: Must be there in person. Written test on derivative pricing under exam conditions.' });
+EVENTS.push({ date: '2026-10-25', time: '23:59-23:59', title: 'Math Stat 344 Quiz 5', type: 'SU_ASSESSMENT', description: 'Online Quiz: SUNLearn quiz on Support Vector Machines.' });
 
 const startDate = new Date('2026-09-26');
 const classEndDate = new Date('2026-11-06');
