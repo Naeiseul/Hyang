@@ -29,10 +29,10 @@ const EVENTS = [
   { date: '2026-10-14', title: 'UP: IAS 382 Practical', type: 'UP_ASSESSMENT' },
   { date: '2026-10-16', title: 'UP: WST 322 Test 2', type: 'UP_ASSESSMENT' },
   { date: '2026-10-17', title: 'UP: WST 321 Test 2', type: 'UP_ASSESSMENT' },
-  { date: '2026-11-09', title: 'UP: WTW 364 Exam', type: 'UP_ASSESSMENT' },
-  { date: '2026-11-12', title: 'UP: IAS 382 Exam', type: 'UP_ASSESSMENT' },
-  { date: '2026-11-16', title: 'UP: WST 322 Exam', type: 'UP_ASSESSMENT' },
-  { date: '2026-11-20', title: 'UP: WST 321 Exam', type: 'UP_ASSESSMENT' },
+  { date: '2026-11-08', title: 'UP: WTW 364 Exam', type: 'UP_ASSESSMENT' },
+  { date: '2026-11-14', title: 'UP: IAS 382 Exam', type: 'UP_ASSESSMENT' },
+  { date: '2026-11-19', title: 'UP: WST 322 Exam', type: 'UP_ASSESSMENT' },
+  { date: '2026-11-24', title: 'UP: WST 321 Exam', type: 'UP_ASSESSMENT' },
 
   // Imagined Exam Dates for SU
   { date: '2026-10-27', title: 'SU: Actuarial Science 311 Exam', type: 'SU_ASSESSMENT' },
