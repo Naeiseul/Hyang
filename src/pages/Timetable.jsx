@@ -98,6 +98,12 @@ for (let d = new Date(startDate); d <= yearEndDate; d.setDate(d.getDate() + 1)) 
       title: 'Dorp Bar: Barback (18:00-02:00)',
       type: 'WORK'
     });
+  } else if (day === 3 || day === 4) { // Wednesday & Thursday
+    EVENTS.push({
+      date: dateStr,
+      title: 'Dorp Bar: Barback (17:00-23:00)',
+      type: 'WORK'
+    });
   }
 }
 
