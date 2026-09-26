@@ -275,6 +275,10 @@ export default function Timetable() {
       <style>
         {`
           @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+          .calendar-scroll::-webkit-scrollbar { height: 8px; }
+          .calendar-scroll::-webkit-scrollbar-track { background: rgba(255,255,255,0.02); border-radius: 4px; }
+          .calendar-scroll::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 4px; }
+          .calendar-scroll::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
         `}
       </style>
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '24px 16px' }}>
@@ -302,14 +306,18 @@ export default function Timetable() {
           </button>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: 8, marginBottom: 8 }}>
-          {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map(day => (
-            <div key={day} style={{ textAlign: 'center', fontSize: 12, color: '#888', textTransform: 'uppercase', letterSpacing: 1 }}>{day}</div>
-          ))}
-        </div>
-        
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: 8 }}>
-          {renderDays()}
+        <div className="calendar-scroll" style={{ width: '100%', overflowX: 'auto', paddingBottom: 16 }}>
+          <div style={{ minWidth: 800 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: 8, marginBottom: 8 }}>
+              {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map(day => (
+                <div key={day} style={{ textAlign: 'center', fontSize: 12, color: '#888', textTransform: 'uppercase', letterSpacing: 1 }}>{day}</div>
+              ))}
+            </div>
+            
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: 8 }}>
+              {renderDays()}
+            </div>
+          </div>
         </div>
       </div>
     </div>
