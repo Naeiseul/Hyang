@@ -316,21 +316,21 @@ export default function Timetable() {
       });
 
       days.push(
-        <div key={d} onClick={() => setSelectedDate(dateStr)}
+        <div key={d} onClick={() => setSelectedDate(dateStr)} className="calendar-day-block"
           style={{
             background: GLASS, border: GLASS_BORDER, borderRadius: 8, minHeight: 100, padding: 8, position: 'relative', cursor: 'pointer', transition: 'background 0.2s',
           }}
           onMouseOver={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'}
           onMouseOut={(e) => e.currentTarget.style.background = GLASS}
         >
-          <div style={{ color: '#fff', fontSize: 14, fontWeight: 'bold', marginBottom: 8 }}>{d}</div>
+          <div className="calendar-day-number" style={{ color: '#fff', fontSize: 14, fontWeight: 'bold', marginBottom: 8 }}>{d}</div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
             {hasAssessment && <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#FF5E5B', title: 'Assessment' }} />}
             {hasUP && <div style={{ width: 8, height: 8, borderRadius: '50%', background: UP_COLOR, title: 'UP Class/Event' }} />}
             {hasSU && <div style={{ width: 8, height: 8, borderRadius: '50%', background: SU_COLOR, title: 'SU Class/Event' }} />}
             {hasWork && <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#E2711D', title: 'Work Shift' }} />}
           </div>
-          <div style={{ marginTop: 8, display: 'flex', flexDirection: 'column', gap: 4 }}>
+          <div className="calendar-event-text" style={{ marginTop: 8, display: 'flex', flexDirection: 'column', gap: 4 }}>
             {textEvents.slice(0, 3).map((ev, idx) => (
               <div key={idx} style={{ fontSize: 10, padding: '2px 4px', borderRadius: 4, background: 'rgba(255,255,255,0.1)', color: '#ccc', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                 {ev.title}
@@ -353,6 +353,13 @@ export default function Timetable() {
           .calendar-scroll::-webkit-scrollbar-track { background: rgba(255,255,255,0.02); border-radius: 4px; }
           .calendar-scroll::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 4px; }
           .calendar-scroll::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+          .calendar-grid-wrapper { min-width: 800px; }
+          @media (max-width: 768px) {
+            .calendar-grid-wrapper { min-width: 100%; }
+            .calendar-day-block { min-height: 70px !important; padding: 4px !important; }
+            .calendar-day-number { font-size: 12px !important; margin-bottom: 4px !important; }
+            .calendar-event-text { display: none !important; }
+          }
         `}
       </style>
       
@@ -372,7 +379,7 @@ export default function Timetable() {
           </div>
 
           <div className="calendar-scroll" style={{ width: '100%', overflowX: 'auto', paddingBottom: 16 }}>
-            <div style={{ minWidth: 800 }}>
+            <div className="calendar-grid-wrapper">
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: 8, marginBottom: 8 }}>
                 {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map(day => (
                   <div key={day} style={{ textAlign: 'center', fontSize: 12, color: '#888', textTransform: 'uppercase', letterSpacing: 1 }}>{day}</div>
