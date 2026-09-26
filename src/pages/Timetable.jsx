@@ -174,35 +174,38 @@ function DayTimeline({ events }) {
           </div>
         ))}
         
-        {/* Events */}
-        {timelineEvents.map((ev, i) => {
-          let bg = 'rgba(255,255,255,0.1)';
-          let border = '#aaa';
-          if (ev.type.includes('UP')) { bg = 'rgba(30,58,138,0.3)'; border = UP_COLOR; }
-          if (ev.type.includes('SU')) { bg = 'rgba(124,58,237,0.3)'; border = SU_COLOR; }
-          if (ev.type.includes('WORK')) { bg = 'rgba(226,113,29,0.3)'; border = '#E2711D'; }
-          if (ev.type.includes('ASSESSMENT')) { bg = 'rgba(255,94,91,0.3)'; border = '#FF5E5B'; }
-          
-          return (
-            <div 
-              key={i} 
-              onClick={() => setSelectedEvent(ev)}
-              style={{
-                position: 'absolute', top: ev.top, height: ev.height, 
-                left: `calc(50px + ${ev.col * 24}px)`, right: `calc(16px + ${(numCols - ev.col - 1) * 24}px)`,
-                zIndex: ev.col,
-                background: bg, borderLeft: `4px solid ${border}`, borderRadius: '0 4px 4px 0',
-                padding: '4px 8px', fontSize: 12, color: '#fff', cursor: 'pointer',
-                overflow: 'hidden', backdropFilter: 'blur(4px)', transition: 'transform 0.1s, z-index 0.1s'
-              }}
-              onMouseOver={e => { e.currentTarget.style.transform = 'scale(1.02)'; e.currentTarget.style.zIndex = 100; }}
-              onMouseOut={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.zIndex = ev.col; }}
-            >
-              <div style={{ fontWeight: 'bold', whiteSpace: 'nowrap', textOverflow: 'ellipsis', overflow: 'hidden' }}>{ev.title}</div>
-              <div style={{ fontSize: 10, color: '#ddd' }}>{ev.time.replace('26:00', '02:00').replace('25:00', '01:00').replace('23:59-23:59', '23:59')}</div>
-            </div>
-          );
-        })}
+        {/* Events Container */}
+        <div style={{ position: 'absolute', top: 0, bottom: 0, left: 50, right: 16 }}>
+          {timelineEvents.map((ev, i) => {
+            let bg = 'rgba(255,255,255,0.1)';
+            let border = '#aaa';
+            if (ev.type.includes('UP')) { bg = 'rgba(30,58,138,0.3)'; border = UP_COLOR; }
+            if (ev.type.includes('SU')) { bg = 'rgba(124,58,237,0.3)'; border = SU_COLOR; }
+            if (ev.type.includes('WORK')) { bg = 'rgba(226,113,29,0.3)'; border = '#E2711D'; }
+            if (ev.type.includes('ASSESSMENT')) { bg = 'rgba(255,94,91,0.3)'; border = '#FF5E5B'; }
+            
+            return (
+              <div 
+                key={i} 
+                onClick={() => setSelectedEvent(ev)}
+                style={{
+                  position: 'absolute', top: ev.top, height: ev.height, 
+                  left: `${(ev.col / numCols) * 100}%`, 
+                  width: `${(1 / numCols) * 100}%`,
+                  background: bg, borderLeft: `4px solid ${border}`, borderRadius: '4px',
+                  padding: '4px 8px', fontSize: 12, color: '#fff', cursor: 'pointer',
+                  overflow: 'hidden', backdropFilter: 'blur(4px)', transition: 'transform 0.1s',
+                  boxSizing: 'border-box', borderRight: '2px solid transparent'
+                }}
+                onMouseOver={e => { e.currentTarget.style.transform = 'scale(1.02)'; e.currentTarget.style.zIndex = 100; }}
+                onMouseOut={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.zIndex = 1; }}
+              >
+                <div style={{ fontWeight: 'bold', whiteSpace: 'nowrap', textOverflow: 'ellipsis', overflow: 'hidden' }}>{ev.title}</div>
+                <div style={{ fontSize: 10, color: '#ddd' }}>{ev.time.replace('26:00', '02:00').replace('25:00', '01:00').replace('23:59-23:59', '23:59')}</div>
+              </div>
+            );
+          })}
+        </div>
       </div>
 
       {/* Details sidebar for selected event */}
@@ -230,6 +233,7 @@ function DayView({ dateStr, onBack }) {
   return (
     <div style={{ padding: '24px 16px', animation: 'fadeIn 0.2s ease-out' }}>
       <button onClick={onBack} style={{
+        marginTop: 32,
         background: GLASS, border: GLASS_BORDER, color: TEXT, cursor: 'pointer', fontFamily: FONT,
         fontSize: 14, padding: '8px 16px', borderRadius: 6, marginBottom: 24, display: 'inline-flex', alignItems: 'center', gap: 8
       }}>
@@ -249,7 +253,7 @@ function UpcomingDeadlines() {
     .sort((a, b) => a.date.localeCompare(b.date));
 
   return (
-    <div className="calendar-scroll" style={{ flex: '1 1 280px', maxWidth: '100%', minWidth: 280, background: 'rgba(0,0,0,0.2)', borderLeft: GLASS_BORDER, padding: '24px 16px', overflowY: 'auto', maxHeight: '100vh' }}>
+    <div className="calendar-scroll" style={{ flex: '1 1 280px', maxWidth: '100%', minWidth: 280, background: 'rgba(0,0,0,0.2)', borderLeft: GLASS_BORDER, padding: '56px 16px 24px 16px', overflowY: 'auto', maxHeight: '100vh' }}>
       <h3 style={{ fontSize: 14, textTransform: 'uppercase', letterSpacing: 1, color: '#FF5E5B', marginBottom: 24, borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: 8 }}>
         Upcoming Deadlines
       </h3>
@@ -353,7 +357,7 @@ export default function Timetable() {
       </style>
       
       <div style={{ flex: '1 1 600px', minWidth: 300, paddingBottom: 60, height: '100vh', overflowY: 'auto' }} className="calendar-scroll">
-        <div style={{ maxWidth: 900, margin: '0 auto', padding: '24px 16px' }}>
+        <div style={{ maxWidth: 900, margin: '0 auto', padding: '56px 16px 24px 16px' }}>
           <div style={{ marginBottom: 24, padding: 24, background: GLASS, border: GLASS_BORDER, borderRadius: 12 }}>
             <h2 style={{ fontFamily: SERIF, fontSize: 24, margin: '0 0 16px 0', color: '#fff' }}>Massive Stellies Third Year Module</h2>
             <p style={{ fontSize: 14, lineHeight: 1.6, color: '#ddd' }}>
