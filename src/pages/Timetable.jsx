@@ -151,7 +151,7 @@ function DayTimeline({ events }) {
               onClick={() => setSelectedEvent(ev)}
               style={{
                 position: 'absolute', top: ev.top, height: ev.height, left: 50, right: 16,
-                background: bg, borderLeft: \`4px solid \${border}\`, borderRadius: '0 4px 4px 0',
+                background: bg, borderLeft: `4px solid ${border}`, borderRadius: '0 4px 4px 0',
                 padding: '4px 8px', fontSize: 12, color: '#fff', cursor: 'pointer',
                 overflow: 'hidden', backdropFilter: 'blur(4px)', transition: 'transform 0.1s'
               }}
@@ -215,7 +215,7 @@ function UpcomingDeadlines() {
       </h3>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
         {upcoming.map((ev, i) => (
-          <div key={i} style={{ background: 'rgba(255,255,255,0.03)', borderRadius: 8, padding: 12, borderLeft: \`4px solid \${ev.type.includes('UP') ? UP_COLOR : SU_COLOR}\` }}>
+          <div key={i} style={{ background: 'rgba(255,255,255,0.03)', borderRadius: 8, padding: 12, borderLeft: `4px solid ${ev.type.includes('UP') ? UP_COLOR : SU_COLOR}` }}>
             <div style={{ fontSize: 11, color: '#888', marginBottom: 4 }}>
               {new Date(ev.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
             </div>
@@ -249,10 +249,10 @@ export default function Timetable() {
 
   const renderDays = () => {
     const days = [];
-    for (let i = 0; i < (firstDay === 0 ? 6 : firstDay - 1); i++) { days.push(<div key={\`pad-\${i}\`} />); }
+    for (let i = 0; i < (firstDay === 0 ? 6 : firstDay - 1); i++) { days.push(<div key={`pad-${i}`} />); }
 
     for (let d = 1; d <= daysInMonth; d++) {
-      const dateStr = \`\${current.year}-\${String(current.month + 1).padStart(2, '0')}-\${String(d).padStart(2, '0')}\`;
+      const dateStr = `${current.year}-${String(current.month + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
       const dayEvents = EVENTS.filter(ev => (ev.end ? dateStr >= ev.date && dateStr <= ev.end : dateStr === ev.date));
       
       const hasUP = dayEvents.some(ev => ev.type.startsWith('UP'));
@@ -264,8 +264,8 @@ export default function Timetable() {
       EVENTS.forEach(ev => {
         if (ev.type === 'WORK' || ev.type.includes('CLASS')) return;
         if (ev.end) {
-          if (dateStr === ev.date) textEvents.push({ ...ev, title: \`Start: \${ev.title}\` });
-          else if (dateStr === ev.end) textEvents.push({ ...ev, title: \`End: \${ev.title}\` });
+          if (dateStr === ev.date) textEvents.push({ ...ev, title: `Start: ${ev.title}` });
+          else if (dateStr === ev.end) textEvents.push({ ...ev, title: `End: ${ev.title}` });
         } else {
           if (dateStr === ev.date) textEvents.push(ev);
         }
@@ -303,13 +303,13 @@ export default function Timetable() {
   return (
     <div style={{ display: 'flex', minHeight: '100vh', fontFamily: FONT, color: TEXT, background: BG }}>
       <style>
-        {\`
+        {`
           @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
           .calendar-scroll::-webkit-scrollbar { height: 8px; width: 8px; }
           .calendar-scroll::-webkit-scrollbar-track { background: rgba(255,255,255,0.02); border-radius: 4px; }
           .calendar-scroll::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 4px; }
           .calendar-scroll::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
-        \`}
+        `}
       </style>
       
       <div style={{ flex: 1, paddingBottom: 60, height: '100vh', overflowY: 'auto' }} className="calendar-scroll">
