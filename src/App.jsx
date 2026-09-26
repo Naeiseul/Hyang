@@ -11,7 +11,7 @@ function RequireAuth({ children }) {
 
 function SidebarLayout({ children }) {
   const location = useLocation();
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(() => window.innerWidth > 768);
 
   return (
     <div style={{ display: 'flex', minHeight: '100vh', background: '#0f0f1a' }}>

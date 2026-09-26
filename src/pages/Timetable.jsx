@@ -78,39 +78,39 @@ for (let d = new Date(startDate); d <= yearEndDate; d.setDate(d.getDate() + 1)) 
 
   if (d <= classEndDate) {
     if (day === 1) { // Monday
-      EVENTS.push({ date: dateStr, time: '08:30-09:20', title: 'Lecture: WTW 364', type: 'UP_CLASS' });
-      EVENTS.push({ date: dateStr, time: '10:00-10:50', title: 'Lecture: Math Stat 344', type: 'SU_CLASS' });
-      EVENTS.push({ date: dateStr, time: '11:30-12:20', title: 'Lecture: IAS 382', type: 'UP_CLASS' });
-      EVENTS.push({ date: dateStr, time: '14:00-14:50', title: 'Lecture: Actuarial Sci 371', type: 'SU_CLASS' });
+      EVENTS.push({ date: dateStr, time: '08:30-09:20', title: 'Lecture: WTW 364', type: 'UP_CLASS', description: 'Financial Engineering: Covering continuous-time finance, Ito calculus, and martingale pricing.' });
+      EVENTS.push({ date: dateStr, time: '10:00-10:50', title: 'Lecture: Math Stat 344', type: 'SU_CLASS', description: 'Statistical Learning: Supervised learning, decision trees, and regularized regression.' });
+      EVENTS.push({ date: dateStr, time: '11:30-12:20', title: 'Lecture: IAS 382', type: 'UP_CLASS', description: 'Survival Models: Estimating survival probabilities and modelling mortality.' });
+      EVENTS.push({ date: dateStr, time: '14:00-14:50', title: 'Lecture: Actuarial Sci 371', type: 'SU_CLASS', description: 'Advanced Actuarial Math: Profit testing, unit-linked policies, and loss reserving.' });
     }
     if (day === 2) { // Tuesday
-      EVENTS.push({ date: dateStr, time: '09:30-10:20', title: 'Lecture: WST 321', type: 'UP_CLASS' });
-      EVENTS.push({ date: dateStr, time: '11:00-11:50', title: 'Lecture: Math Stat 364', type: 'SU_CLASS' });
-      EVENTS.push({ date: dateStr, time: '13:30-14:20', title: 'Lecture: WST 322', type: 'UP_CLASS' });
-      EVENTS.push({ date: dateStr, time: '15:30-17:00', title: 'Practical: WTW 364', type: 'UP_CLASS' });
+      EVENTS.push({ date: dateStr, time: '09:30-10:20', title: 'Lecture: WST 321', type: 'UP_CLASS', description: 'Time Series Analysis: ARIMA modelling, Box-Jenkins methodology.' });
+      EVENTS.push({ date: dateStr, time: '11:00-11:50', title: 'Lecture: Math Stat 364', type: 'SU_CLASS', description: 'Mathematical Statistics: Multivariate analysis and hypothesis testing.' });
+      EVENTS.push({ date: dateStr, time: '13:30-14:20', title: 'Lecture: WST 322', type: 'UP_CLASS', description: 'Actuarial Statistics: Loss distributions, credibility theory, and copulas.' });
+      EVENTS.push({ date: dateStr, time: '15:30-17:00', title: 'Practical: WTW 364', type: 'UP_CLASS', description: 'Financial Engineering Practical: Coding binomial trees in R.' });
     }
     if (day === 3) { // Wednesday
-      EVENTS.push({ date: dateStr, time: '09:00-12:00', title: 'Practical: Math Stat 344', type: 'SU_CLASS' });
-      EVENTS.push({ date: dateStr, time: '13:30-16:30', title: 'Practical: IAS 382 (Excel)', type: 'UP_CLASS' });
-      EVENTS.push({ date: dateStr, time: '14:00-17:00', title: 'Tutorial: Actuarial Sci 371', type: 'SU_CLASS' });
+      EVENTS.push({ date: dateStr, time: '09:00-12:00', title: 'Practical: Math Stat 344', type: 'SU_CLASS', description: 'Statistical Learning Practical: R-studio sessions building predictive models.' });
+      EVENTS.push({ date: dateStr, time: '13:30-16:30', title: 'Practical: IAS 382 (Excel)', type: 'UP_CLASS', description: 'Survival Models Practical: Constructing mortality tables and Kaplan-Meier in Excel.' });
+      EVENTS.push({ date: dateStr, time: '14:00-17:00', title: 'Tutorial: Actuarial Sci 371', type: 'SU_CLASS', description: 'Actuarial Tutorial: Weekly problem-solving session and possible class tests.' });
     }
     if (day === 4) { // Thursday
-      EVENTS.push({ date: dateStr, time: '08:30-09:20', title: 'Lecture: WTW 364', type: 'UP_CLASS' });
-      EVENTS.push({ date: dateStr, time: '10:30-13:30', title: 'Practical: WST 321', type: 'UP_CLASS' });
-      EVENTS.push({ date: dateStr, time: '14:00-17:00', title: 'Practical: Math Stat 364', type: 'SU_CLASS' });
+      EVENTS.push({ date: dateStr, time: '08:30-09:20', title: 'Lecture: WTW 364', type: 'UP_CLASS', description: 'Financial Engineering: Black-Scholes PDE and Greeks.' });
+      EVENTS.push({ date: dateStr, time: '10:30-13:30', title: 'Practical: WST 321', type: 'UP_CLASS', description: 'Time Series Practical: Forecasting using auto.arima in R.' });
+      EVENTS.push({ date: dateStr, time: '14:00-17:00', title: 'Practical: Math Stat 364', type: 'SU_CLASS', description: 'Math Stat Practical: Multivariate data analysis in R.' });
     }
     if (day === 5) { // Friday
-      EVENTS.push({ date: dateStr, time: '08:30-09:20', title: 'Lecture: IAS 382', type: 'UP_CLASS' });
-      EVENTS.push({ date: dateStr, time: '09:30-10:20', title: 'Lecture: WST 321', type: 'UP_CLASS' });
-      EVENTS.push({ date: dateStr, time: '10:30-11:20', title: 'Lecture: WST 322', type: 'UP_CLASS' });
-      EVENTS.push({ date: dateStr, time: '13:30-16:30', title: 'Practical: WST 322', type: 'UP_CLASS' });
+      EVENTS.push({ date: dateStr, time: '08:30-09:20', title: 'Lecture: IAS 382', type: 'UP_CLASS', description: 'Survival Models: Cox proportional hazards.' });
+      EVENTS.push({ date: dateStr, time: '09:30-10:20', title: 'Lecture: WST 321', type: 'UP_CLASS', description: 'Time Series Analysis: Spectral analysis and forecasting.' });
+      EVENTS.push({ date: dateStr, time: '10:30-11:20', title: 'Lecture: WST 322', type: 'UP_CLASS', description: 'Actuarial Statistics: Reinsurance and ruin theory.' });
+      EVENTS.push({ date: dateStr, time: '13:30-16:30', title: 'Practical: WST 322', type: 'UP_CLASS', description: 'Actuarial Stat Practical: Simulating aggregate losses in R.' });
     }
   }
 
   if (day === 5 || day === 6) {
-    EVENTS.push({ date: dateStr, time: '18:00-26:00', title: 'Dorp Bar: Barback', type: 'WORK' }); // 26:00 means 02:00 next day
+    EVENTS.push({ date: dateStr, time: '18:00-26:00', title: 'Dorp Bar: Barback', type: 'WORK', description: 'Evening shift at Dorp Bar. Ensure to wear comfortable shoes and bring a water bottle.' }); // 26:00 means 02:00 next day
   } else if (day === 3 || day === 4) {
-    EVENTS.push({ date: dateStr, time: '17:00-23:00', title: 'Dorp Bar: Barback', type: 'WORK' });
+    EVENTS.push({ date: dateStr, time: '17:00-23:00', title: 'Dorp Bar: Barback', type: 'WORK', description: 'Mid-week evening shift at Dorp Bar.' });
   }
 }
 
@@ -133,17 +133,38 @@ function DayTimeline({ events }) {
   const endHour = 26;
   const pixelsPerHour = 60;
   
-  const timelineEvents = events.filter(ev => ev.time && !ev.type.includes('PERIOD')).map(ev => {
-    const [start, end] = parseTime(ev.time);
-    let top = (start - startHour) * pixelsPerHour;
-    let height = (end - start) * pixelsPerHour;
-    if (height < 20) height = 20; // min height
-    return { ...ev, top, height };
+  const timelineEvents = events.filter(ev => ev.time && !ev.type.includes('PERIOD'))
+    .map(ev => {
+      const [start, end] = parseTime(ev.time);
+      let top = (start - startHour) * pixelsPerHour;
+      let height = (end - start) * pixelsPerHour;
+      if (height < 20) height = 20; // min height
+      return { ...ev, top, height, start, end };
+    })
+    .sort((a, b) => a.start - b.start);
+
+  // Assign columns for overlapping
+  const columns = [];
+  timelineEvents.forEach(ev => {
+    let placed = false;
+    for (let i = 0; i < columns.length; i++) {
+      if (columns[i][columns[i].length - 1].end <= ev.start) {
+        columns[i].push(ev);
+        ev.col = i;
+        placed = true;
+        break;
+      }
+    }
+    if (!placed) {
+      ev.col = columns.length;
+      columns.push([ev]);
+    }
   });
+  const numCols = columns.length;
 
   return (
-    <div style={{ position: 'relative', marginTop: 24, display: 'flex', gap: 24, flexDirection: 'row' }}>
-      <div style={{ flex: 1, position: 'relative', height: (endHour - startHour) * pixelsPerHour, background: 'rgba(255,255,255,0.02)', borderRadius: 8, overflow: 'hidden' }}>
+    <div style={{ position: 'relative', marginTop: 24, display: 'flex', gap: 24, flexWrap: 'wrap' }}>
+      <div style={{ flex: '1 1 300px', minWidth: 300, position: 'relative', height: (endHour - startHour) * pixelsPerHour, background: 'rgba(255,255,255,0.02)', borderRadius: 8, overflow: 'hidden' }}>
         {/* Grid lines */}
         {Array.from({ length: endHour - startHour + 1 }).map((_, i) => (
           <div key={i} style={{ position: 'absolute', top: i * pixelsPerHour, left: 0, right: 0, height: 1, background: 'rgba(255,255,255,0.05)', display: 'flex', alignItems: 'flex-start' }}>
@@ -167,13 +188,15 @@ function DayTimeline({ events }) {
               key={i} 
               onClick={() => setSelectedEvent(ev)}
               style={{
-                position: 'absolute', top: ev.top, height: ev.height, left: 50, right: 16,
+                position: 'absolute', top: ev.top, height: ev.height, 
+                left: `calc(50px + ${ev.col * 24}px)`, right: `calc(16px + ${(numCols - ev.col - 1) * 24}px)`,
+                zIndex: ev.col,
                 background: bg, borderLeft: `4px solid ${border}`, borderRadius: '0 4px 4px 0',
                 padding: '4px 8px', fontSize: 12, color: '#fff', cursor: 'pointer',
-                overflow: 'hidden', backdropFilter: 'blur(4px)', transition: 'transform 0.1s'
+                overflow: 'hidden', backdropFilter: 'blur(4px)', transition: 'transform 0.1s, z-index 0.1s'
               }}
-              onMouseOver={e => e.currentTarget.style.transform = 'scale(1.01)'}
-              onMouseOut={e => e.currentTarget.style.transform = 'none'}
+              onMouseOver={e => { e.currentTarget.style.transform = 'scale(1.02)'; e.currentTarget.style.zIndex = 100; }}
+              onMouseOut={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.zIndex = ev.col; }}
             >
               <div style={{ fontWeight: 'bold', whiteSpace: 'nowrap', textOverflow: 'ellipsis', overflow: 'hidden' }}>{ev.title}</div>
               <div style={{ fontSize: 10, color: '#ddd' }}>{ev.time.replace('26:00', '02:00').replace('25:00', '01:00').replace('23:59-23:59', '23:59')}</div>
@@ -183,13 +206,13 @@ function DayTimeline({ events }) {
       </div>
 
       {/* Details sidebar for selected event */}
-      <div style={{ width: 250, minWidth: 250, background: GLASS, border: GLASS_BORDER, borderRadius: 8, padding: 16, height: 'fit-content' }}>
+      <div style={{ flex: '1 1 250px', maxWidth: '100%', background: GLASS, border: GLASS_BORDER, borderRadius: 8, padding: 16, height: 'fit-content' }}>
         {selectedEvent ? (
           <div style={{ animation: 'fadeIn 0.2s' }}>
             <h3 style={{ margin: '0 0 8px 0', fontSize: 16, color: '#fff' }}>{selectedEvent.title}</h3>
             <div style={{ fontSize: 12, color: '#aaa', marginBottom: 16, fontFamily: 'monospace' }}>{selectedEvent.time.replace('26:00', '02:00').replace('25:00', '01:00').replace('23:59-23:59', '23:59 Deadline')}</div>
             <p style={{ fontSize: 14, color: '#ddd', lineHeight: 1.5 }}>
-              {selectedEvent.description || 'Routine scheduled block. Attendance highly recommended.'}
+              {selectedEvent.description || 'Routine scheduled class block. Attendance is highly recommended.'}
             </p>
           </div>
         ) : (
@@ -226,7 +249,7 @@ function UpcomingDeadlines() {
     .sort((a, b) => a.date.localeCompare(b.date));
 
   return (
-    <div className="calendar-scroll" style={{ width: 280, minWidth: 280, background: 'rgba(0,0,0,0.2)', borderLeft: GLASS_BORDER, padding: '24px 16px', overflowY: 'auto', maxHeight: '100vh' }}>
+    <div className="calendar-scroll" style={{ flex: '1 1 280px', maxWidth: '100%', minWidth: 280, background: 'rgba(0,0,0,0.2)', borderLeft: GLASS_BORDER, padding: '24px 16px', overflowY: 'auto', maxHeight: '100vh' }}>
       <h3 style={{ fontSize: 14, textTransform: 'uppercase', letterSpacing: 1, color: '#FF5E5B', marginBottom: 24, borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: 8 }}>
         Upcoming Deadlines
       </h3>
@@ -318,7 +341,7 @@ export default function Timetable() {
   };
 
   return (
-    <div style={{ display: 'flex', minHeight: '100vh', fontFamily: FONT, color: TEXT, background: BG }}>
+    <div style={{ display: 'flex', flexWrap: 'wrap', minHeight: '100vh', fontFamily: FONT, color: TEXT, background: BG }}>
       <style>
         {`
           @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
@@ -329,7 +352,7 @@ export default function Timetable() {
         `}
       </style>
       
-      <div style={{ flex: 1, paddingBottom: 60, height: '100vh', overflowY: 'auto' }} className="calendar-scroll">
+      <div style={{ flex: '1 1 600px', minWidth: 300, paddingBottom: 60, height: '100vh', overflowY: 'auto' }} className="calendar-scroll">
         <div style={{ maxWidth: 900, margin: '0 auto', padding: '24px 16px' }}>
           <div style={{ marginBottom: 24, padding: 24, background: GLASS, border: GLASS_BORDER, borderRadius: 12 }}>
             <h2 style={{ fontFamily: SERIF, fontSize: 24, margin: '0 0 16px 0', color: '#fff' }}>Massive Stellies Third Year Module</h2>
